@@ -8,7 +8,7 @@
 >>    group=np.array([[1.0,1.1],[0.2,0.1],[1.1,1.0],[0,0],[0,0.1],[0.1,0]])  
 >>    labels=np.array(['A','B','A','B','B','B'])  
 
->>    #计算距离的公式
+>>    #计算距离的公式  
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif) 
 
 >>    #结果如下:  
@@ -28,7 +28,7 @@
 >>    #labels是分类标签集(第9行的labels)  
 >>    #k是最近邻居的数量  
 
->>    #计算距离的公式
+>>    #计算距离的公式  
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif) 
 
 >>    #**第一步,数据准备**  
@@ -42,11 +42,11 @@
 >>    #np.tile(inX,(dataSetSize,1))代码的tile函数，将inX按行(dataSetSize,1)--(6,1)的维度复制  
 >>    #np.tile(inX,(6,1)),行复制6次,列不变,结果为  
 >>    #[[0.9,0.8],  
->>    # [0.9,0.8],  
->>    # [0.9,0.8],  
->>    # [0.9,0.8],  
->>    # [0.9,0.8],  
->>    # [0.9,0.8]]  
+>>    #[0.9,0.8],  
+>>    #[0.9,0.8],  
+>>    #[0.9,0.8],  
+>>    #[0.9,0.8],  
+>>    #[0.9,0.8]]  
 
 >>    #**第二步,距离计算**  
 
