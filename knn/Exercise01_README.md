@@ -22,6 +22,10 @@
 >>    #labels是分类标签集(第9行的labels)  
 >>    #k是最近邻居的数量  
 
+>>    #计算距离的公式
+>>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif) 
+
+>>    ####第一步,数据准备
 >>    #取行数,结果是6(行)  
 >>    dataSetSize=dataSet.shape[0]  
  
