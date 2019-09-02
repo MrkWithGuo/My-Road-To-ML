@@ -29,7 +29,7 @@
 >>    #k是最近邻居的数量  
 
 >>    #计算距离的公式  
->>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif) 
+>>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif)  
 
 >>    #**第一步,数据准备**  
 
@@ -50,14 +50,14 @@
 
 >>    #**第二步,距离计算**  
 
->>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_01.gif) 
+>>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_01.gif)  
 >>    diffMat=np.tile(inX,(dataSetSize,1))-dataSet  
->>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_03.gif) 
+>>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_03.gif)  
 >>    sqDiffMat=diffMat**2  
 >>    #.sum不加参数所有相加；axis=1按行相加；axis=0按列相加  
->>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_04.gif) 
+>>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_04.gif)  
 >>    sqDistances=sqDiffMat.sum(axis=1)  
->>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif) 
+>>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif)  
 >>    distances=sqDistances**0.5  
 >>    #从小到大排序的索引值  
 >>    sortedDistIndicies=distances.argsort()  
