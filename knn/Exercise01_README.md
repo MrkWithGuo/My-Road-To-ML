@@ -7,13 +7,19 @@
 >>    #原书数据较少，现增加2条，以体现k近邻的思想  
 >>    group=np.array([[1.0,1.1],[0.2,0.1],[1.1,1.0],[0,0],[0,0.1],[0.1,0]])  
 >>    labels=np.array(['A','B','A','B','B','B'])  
->>    #group  labels  每次循环执行时的xB0和xB1  
+
+>>    #计算距离的公式
+>>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif) 
+
+>>    #结果如下:  
+>>    #group  labels  数学公式中每次循环执行时的xB0和xB1  
 >>    #[1.0,1.1]  ['A']   xB0=1.0,xB1=1.1  
 >>    #[0.2,0.1]  ['B']   xB0=0.2,xB1=0.1  
 >>    #[1.1,1.0]  ['A']   xB0=1.1,xB1=1.0  
 >>    #[0 , 0  ]  ['B']   xB0=0  ,xB1=0  
 >>    #[0  ,0.1]  ['B']   xB0=0  ,xB1=0.1  
 >>    #[0,1,0  ]  ['B']   xB0=0.1,xB1=0  
+
 >>    return group,labels  
 
 >def classify0(inX,dataSet,labels,k):  
@@ -42,20 +48,25 @@
 >>    # [0.9,0.8],  
 >>    # [0.9,0.8]]  
 
+>>    #**第二步,距离计算**  
+
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_01.gif) 
 >>    diffMat=np.tile(inX,(dataSetSize,1))-dataSet  
->>    #[(xA0-xB0)**2,(xA1-xB1)**2]  
+>>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_03.gif) 
 >>    sqDiffMat=diffMat**2  
 >>    #.sum不加参数所有相加；axis=1按行相加；axis=0按列相加  
->>    #(xA0-xB0)**2+(xA1-xB1)**2  
+>>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_04.gif) 
 >>    sqDistances=sqDiffMat.sum(axis=1)  
->>    #(xA0-xB0)**2+(xA1-xB1)**2)**0.5
+>>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif) 
 >>    distances=sqDistances**0.5  
 >>    #从小到大排序的索引值  
 >>    sortedDistIndicies=distances.argsort()  
 >>    #看看结果
 >>    print(distances)  
 >>    print(sortedDistIndicies)  
+
+>>    #**第三步,k近邻**  
+
 >>    classCount={}  
 >>    #k近邻  
 >>    for i in range(k):  
