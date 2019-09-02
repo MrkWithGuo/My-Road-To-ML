@@ -107,7 +107,7 @@
 >>    #按照labels总数进行排序，比如(A:2),(B:1)，说明结果更接近A  
 >>    #itemgetter(1)对字典的值排序；（0）对字典的键排序  
 >>    sortedClassCount = sorted(classCount.items(),key = operator.itemgetter(1),reverse = True)  
->>    print(sortedClassCount) 
+>>    print(sortedClassCount)  
 >>    #结果为[('A', 2), ('B', 1)]  
 
 >>    #返回预测的最近结果  
