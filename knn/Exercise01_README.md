@@ -9,23 +9,32 @@
 >>    return group,labels  
 
 >def classify0(inX,dataSet,labels,k):  
->>    #取行数
+>>    #取行数  
 >>    dataSetSize=dataSet.shape[0]  
->>    diffMat=np.tile(inX,(dataSetSize,1))-dataSet#[(xA0-xB0),(xA1-xB1)]  
->>    sqDiffMat=diffMat**2#[(xA0-xB0)**2,(xA1-xB1)**2]  
+>>    #[(xA0-xB0),(xA1-xB1)]  
+>>    diffMat=np.tile(inX,(dataSetSize,1))-dataSet  
+>>    #[(xA0-xB0)**2,(xA1-xB1)**2]  
+>>    sqDiffMat=diffMat**2  
 >>    #.sum不加参数所有相加；axis=1按行相加；axis=0按列相加  
->>    sqDistances=sqDiffMat.sum(axis=1)#(xA0-xB0)**2+(xA1-xB1)**2  
->>    distances=sqDistances**0.5#(xA0-xB0)**2+(xA1-xB1)**2)**0.5  
->>    sortedDistIndicies=distances.argsort()  
+>>    #(xA0-xB0)**2+(xA1-xB1)**2  
+>>    sqDistances=sqDiffMat.sum(axis=1)  
+>>    #(xA0-xB0)**2+(xA1-xB1)**2)**0.5
+>>    distances=sqDistances**0.5  
 >>    #从小到大排序的索引值  
+>>    sortedDistIndicies=distances.argsort()  
+>>    #看看结果
 >>    print(distances)  
 >>    print(sortedDistIndicies)  
 >>    classCount={}  
->>    for i in range(k):#k近邻  
->>>        voteIlabel=labels[sortedDistIndicies[i]]#按排序后labels值  
+>>    #k近邻  
+>>    for i in range(k):  
+>>>        #按排序后labels值  
+>>>        voteIlabel=labels[sortedDistIndicies[i]]  
+>>>        #看看过程
 >>>        print(dataSet[sortedDistIndicies[i]])  
 >>>        print(voteIlabel)  
->>>        classCount[voteIlabel]=classCount.get(voteIlabel,0)+1#根据不同的labels值，用字典进行总数统计  
+>>>        #根据不同的labels值，用字典进行总数统计  
+>>>        classCount[voteIlabel]=classCount.get(voteIlabel,0)+1  
 >>>        print(classCount[voteIlabel])  
 >>    print(classCount)  
 >>    #itemgetter(1)对字典的值排序；（0）对字典的键排序  
