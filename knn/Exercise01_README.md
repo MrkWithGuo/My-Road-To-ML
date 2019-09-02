@@ -11,7 +11,7 @@
 >def classify0(inX,dataSet,labels,k):  
 >>    #取行数  
 >>    dataSetSize=dataSet.shape[0]  
->>    #[(xA0-xB0),(xA1-xB1)]  
+>>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_01.gif)  
 >>    diffMat=np.tile(inX,(dataSetSize,1))-dataSet  
 >>    #[(xA0-xB0)**2,(xA1-xB1)**2]  
 >>    sqDiffMat=diffMat**2  
