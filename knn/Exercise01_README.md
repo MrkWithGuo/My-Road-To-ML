@@ -48,24 +48,28 @@
 >>    #[0.9,0.8],  
 >>    #[0.9,0.8]]  
 
->>    #**第二步,距离计算**  
+>>    #**第二步,计算距离**  
 
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_01.gif)  
 >>    diffMat = np.tile(inX,(dataSetSize,1))-dataSet  
+
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_03.gif)  
 >>    sqDiffMat = diffMat ** 2  
->>    #.sum不加参数所有相加；axis=1按行相加；axis=0按列相加  
+
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_04.gif)  
 >>    sqDistances = sqDiffMat.sum(axis=1)  
+>>    #.sum不加参数所有相加；axis=1按行相加；axis=0按列相加  
+
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif)  
 >>    distances = sqDistances ** 0.5  
+
+>>    #**第三步,k近邻**  
+
 >>    #从小到大排序的索引值  
 >>    sortedDistIndicies = distances.argsort()  
 >>    #看看结果
 >>    print(distances)  
 >>    print(sortedDistIndicies)  
-
->>    #**第三步,k近邻**  
 
 >>    classCount = {}  
 >>    #k近邻  
