@@ -5,8 +5,8 @@
 
 >def createDataSet():  
 >>    #原书数据较少，现增加2条，以体现k近邻的思想  
->>    group=np.array([[1.0,1.1],[0.2,0.1],[1.1,1.0],[0,0],[0,0.1],[0.1,0]])  
->>    labels=np.array(['A','B','A','B','B','B'])  
+>>    group = np.array([[1.0,1.1],[0.2,0.1],[1.1,1.0],[0,0],[0,0.1],[0.1,0]])  
+>>    labels = np.array(['A','B','A','B','B','B'])  
 
 >>    #计算距离的公式  
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif) 
@@ -34,7 +34,7 @@
 >>    #**第一步,数据准备**  
 
 >>    #取行数,结果是6(行)  
->>    dataSetSize=dataSet.shape[0]  
+>>    dataSetSize = dataSet.shape[0]  
  
 >>    #xA0和xA1对应inX的第1列和第2列的值,本例的输入值inX=[0.9,0.8]  
 >>    #xA0=0.9,xA1=0.8,只有1行数据  
@@ -51,37 +51,37 @@
 >>    #**第二步,距离计算**  
 
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_01.gif)  
->>    diffMat=np.tile(inX,(dataSetSize,1))-dataSet  
+>>    diffMat = np.tile(inX,(dataSetSize,1))-dataSet  
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_03.gif)  
->>    sqDiffMat=diffMat**2  
+>>    sqDiffMat = diffMat ** 2  
 >>    #.sum不加参数所有相加；axis=1按行相加；axis=0按列相加  
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_04.gif)  
->>    sqDistances=sqDiffMat.sum(axis=1)  
+>>    sqDistances = sqDiffMat.sum(axis=1)  
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif)  
->>    distances=sqDistances**0.5  
+>>    distances = sqDistances ** 0.5  
 >>    #从小到大排序的索引值  
->>    sortedDistIndicies=distances.argsort()  
+>>    sortedDistIndicies = distances.argsort()  
 >>    #看看结果
 >>    print(distances)  
 >>    print(sortedDistIndicies)  
 
 >>    #**第三步,k近邻**  
 
->>    classCount={}  
+>>    classCount = {}  
 >>    #k近邻  
 >>    for i in range(k):  
 >>>        #按排序后labels值  
->>>        voteIlabel=labels[sortedDistIndicies[i]]  
+>>>        voteIlabel = labels[sortedDistIndicies[i]]  
 >>>        #看看过程
 >>>        print(dataSet[sortedDistIndicies[i]])  
 >>>        print(voteIlabel)  
 >>>        #根据不同的labels值，用字典进行总数统计  
->>>        classCount[voteIlabel]=classCount.get(voteIlabel,0)+1  
+>>>        classCount[voteIlabel] = classCount.get(voteIlabel,0)+1  
 >>>        print(classCount[voteIlabel])  
 >>    print(classCount)  
 >>    #itemgetter(1)对字典的值排序；（0）对字典的键排序  
 >>    #按照labels总数进行排序，比如(A:2),(B:1)，说明结果更接近A  
->>    sortedClassCount=sorted(classCount.items(),key=operator.itemgetter(1),reverse=True)  
+>>    sortedClassCount = sorted(classCount.items(),key = operator.itemgetter(1),reverse = True)  
 >>    print(sortedClassCount)  
 >>    #返回预测的最近结果  
 >>    return sortedClassCount[0][0]  
