@@ -1,10 +1,10 @@
 #学习《机器学习实战》（Machine Learning in Action）第2章的代码  
 
-import numpy as np  
-import operator  
+>import numpy as np  
+>import operator  
 
-def createDataSet():  
-    group=np.array([[1.0,1.1],[0.2,0.1],[1.1,1.0],[0,0],[0,0.1],[0.1,0]])  
+>def createDataSet():  
+>>    group=np.array([[1.0,1.1],[0.2,0.1],[1.1,1.0],[0,0],[0,0.1],[0.1,0]])  
     labels=np.array(['A','B','A','B','B','B'])  
     return group,labels  
 
