@@ -25,7 +25,7 @@
 >>    #计算距离的公式
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_02.gif) 
 
->>    #第一步,数据准备  
+>>    #**第一步,数据准备**  
 
 >>    #取行数,结果是6(行)  
 >>    dataSetSize=dataSet.shape[0]  
@@ -34,7 +34,7 @@
 >>    #xA0=0.9,xA1=0.8,只有1行数据  
 >>    #[xB0,xB1]则有6行数据,需要将[xA0,xA1]也变成6行,便于进行矩阵运算[6行2列]-[6行2列]=[6行2列]  
 >>    #np.tile(inX,(dataSetSize,1))代码的tile函数，将inX按行(dataSetSize,1)--(6,1)的维度复制  
->>    #np.tile(inX,(6,1)),行复制6次,列不变,结果为
+>>    #np.tile(inX,(6,1)),行复制6次,列不变,结果为  
 >>    #[[0.9,0.8],  
 >>    # [0.9,0.8],  
 >>    # [0.9,0.8],  
