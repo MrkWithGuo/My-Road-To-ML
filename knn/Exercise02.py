@@ -1,4 +1,4 @@
-
+#learning from 'Machine Learning in Action' Chapter 2  
 import numpy as np  
 import operator  
 
