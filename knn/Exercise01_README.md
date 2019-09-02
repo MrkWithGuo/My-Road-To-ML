@@ -76,15 +76,19 @@
 >>    #labels是(['A','B','A','B','B','B'])  
 >>    #可以看出[0.9,0.8]输入值更接近第3(索引序号值2)和第1个数（索引序号值0）对应的标签'A','A'  
 >>    #如果k值为2,最近的2个邻居都是'A',预测结果就是'A'  
->>    #我们输入的k值为3，标签就要取[2 0 1]对应的labels,labels[2]='A',labels[0]='A',labels[1]='B'
->>    #有2个邻居为'A',1个邻居为'B',少数服从多数,预测结果还是'A'
->>    #如果k值为5,那么2个邻居为'A',3个邻居为'B',预测结果将是'B',预测效果就比较差
->>    #k值的选择需要考虑
+>>    #我们输入的k值为3，标签就要取[2 0 1]对应的labels,labels[2]='A',labels[0]='A',labels[1]='B'  
+>>    #有2个邻居为'A',1个邻居为'B',少数服从多数,预测结果还是'A'  
+>>    #如果k值为5,那么2个邻居为'A',3个邻居为'B',预测结果将是'B',预测效果就比较差  
+>>    #k值的选择需要考虑  
 
+>>    #算法实现
 >>    classCount = {}  
 >>    #k近邻  
 >>    for i in range(k):  
->>>        #按排序后labels值  
+>>>        #按排序后labels值,也就是'A'或'B'  
+>>>        #sortedDistIndicies=[2 0 1 5 4 3]  
+>>>        #sortedDistIndicies[i]分别为2 0 1  
+>>>        #labels[sortedDistIndicies[i]]分别为labels[2]='A',labels[0]='A',labels[1]='B'  
 >>>        voteIlabel = labels[sortedDistIndicies[i]]  
 >>>        #看看过程
 >>>        print(dataSet[sortedDistIndicies[i]])  
