@@ -23,7 +23,7 @@
 >>    return group,labels  
 
 >def classify0(inX,dataSet,labels,k):  
->>    #inX是输入数据(最后1行的输入值，可以自行修改)  
+>>    #inX是输入数据(最后1行的输入值，[0.9,0.8])  
 >>    #dataSet是训练数据集(第8行的group)  
 >>    #labels是分类标签集(第9行的labels)  
 >>    #k是最近邻居的数量  
@@ -40,7 +40,7 @@
 >>    #xA0=0.9,xA1=0.8,只有1行数据  
 >>    #[xB0,xB1]则有6行数据,需要将[xA0,xA1]也变成6行,便于进行矩阵运算[6行2列]-[6行2列]=[6行2列]  
 >>    #np.tile(inX,(dataSetSize,1))代码的tile函数，将inX按行(dataSetSize,1)--(6,1)的维度复制  
->>    #np.tile(inX,(6,1)),行复制6次,列不变,结果为  
+>>    #np.tile(inX,(6,1)),行复制6次,列复制1次,结果为  
 >>    #[[0.9,0.8],  
 >>    #[0.9,0.8],  
 >>    #[0.9,0.8],  
@@ -65,7 +65,7 @@
 
 >>    #**第三步,k近邻**  
 
->>    #从小到大排序的索引值  
+>>    #对距离进行排序，取出从小到大排序的索引值  
 >>    sortedDistIndicies = distances.argsort()  
 >>    #看看结果
 >>    print(distances)  
