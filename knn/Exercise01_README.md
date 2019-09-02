@@ -27,8 +27,15 @@
  
 >>    #xA0和xA1对应inX的第1列和第2列的值,本例的输入值inX=[0.9,0.8]  
 >>    #xA0=0.9,xA1=0.8,只有1行数据  
->>    #[xB0,xB1]则有6行数据,需要将[xA0,xA1]也变成6行,便于进行矩阵运算[6行2列]-[6行2列]=[6行2列]
->>    #np.tile(inX,(dataSetSize,1))代码的tile函数，将inX按行
+>>    #[xB0,xB1]则有6行数据,需要将[xA0,xA1]也变成6行,便于进行矩阵运算[6行2列]-[6行2列]=[6行2列]  
+>>    #np.tile(inX,(dataSetSize,1))代码的tile函数，将inX按行(dataSetSize,1)--(6,1)的维度复制  
+>>    #np.tile(inX,(6,1)),行复制6次,列不变,结果为
+>>    #[[0.9,0.8],  
+>>    # [0.9,0.8],  
+>>    # [0.9,0.8],  
+>>    # [0.9,0.8],  
+>>    # [0.9,0.8],  
+>>    # [0.9,0.8]]  
 
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_01.gif) 
 >>    diffMat=np.tile(inX,(dataSetSize,1))-dataSet  
