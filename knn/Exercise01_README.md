@@ -4,11 +4,13 @@
 >import operator  
 
 >def createDataSet():  
+>>    #原书数据较少，现增加2条，以体现k近邻的思想
 >>    group=np.array([[1.0,1.1],[0.2,0.1],[1.1,1.0],[0,0],[0,0.1],[0.1,0]])  
 >>    labels=np.array(['A','B','A','B','B','B'])  
 >>    return group,labels  
 
 >def classify0(inX,dataSet,labels,k):  
+>>    #inX是输入数据,dataSet是训练数据集,labels是分类标签集,k是最近邻居的数量  
 >>    #取行数  
 >>    dataSetSize=dataSet.shape[0]  
 >>    #![image](https://github.com/MrkWithGuo/My-Road-To-ML/blob/master/knn/images/Exercise01_01.gif)  
