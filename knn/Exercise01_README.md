@@ -9,7 +9,8 @@
 >>    return group,labels  
 
 >def classify0(inX,dataSet,labels,k):  
->>    dataSetSize=dataSet.shape[0]#取行数  
+>>    #取行数
+>>    dataSetSize=dataSet.shape[0]  
 >>    diffMat=np.tile(inX,(dataSetSize,1))-dataSet#[(xA0-xB0),(xA1-xB1)]  
 >>    sqDiffMat=diffMat**2#[(xA0-xB0)**2,(xA1-xB1)**2]  
 >>    #.sum不加参数所有相加；axis=1按行相加；axis=0按列相加  
