@@ -1,3 +1,4 @@
+#learning from 'Machine Learning in Action' Chapter 2
 import numpy as np
 import operator
 
@@ -7,7 +8,7 @@ def createDataSet():
     return group,labels
 
 def classify0(inX,dataSet,labels,k):
-    dataSetSize=dataSet.shape[0]#取行数
+    dataSetSize=dataSet.shape[0]
     diffMat=np.tile(inX,(dataSetSize,1))-dataSet
     sqDiffMat=diffMat**2
     sqDistances=sqDiffMat.sum(axis=1)
