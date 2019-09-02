@@ -15,7 +15,8 @@ def classify0(inX,dataSet,labels,k):
     #.sum不加参数所有相加；axis=1按行相加；axis=0按列相加  
     sqDistances=sqDiffMat.sum(axis=1)#(xA0-xB0)**2+(xA1-xB1)**2  
     distances=sqDistances**0.5#(xA0-xB0)**2+(xA1-xB1)**2)**0.5  
-    sortedDistIndicies=distances.argsort()#从小到大排序的索引值  
+    sortedDistIndicies=distances.argsort()  
+    #从小到大排序的索引值  
     print(distances)  
     print(sortedDistIndicies)  
     classCount={}  
